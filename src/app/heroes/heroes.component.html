@@ -1,0 +1,19 @@
+<h2> Meus Heróis </h2>
+
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{ hero.id }}">
+            <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+        </a>
+        <button class="delete" title="delete hero" (click)="delete(hero)">X</button>
+    </li>
+</ul>
+
+<div>
+    <label>Nome Heróico:
+      <input #heroName />
+    </label>
+    <button (click)="add(heroName.value); heroName.value=''" class="addHeroBtn">
+      Adicionar herói
+    </button>
+</div>
